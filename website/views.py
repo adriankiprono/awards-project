@@ -10,12 +10,12 @@ def home(request):
 
 def search_results(request):
     
-    if 'website' in request.GET and request.GET["website"]:
-        search_term = request.GET.get("website")
-        searched_website = Award.search_by_title(search_term)
+    if 'award' in request.GET and request.GET["award"]:
+        search_term = request.GET.get("award")
+        searched_awards = Award.search_by_title(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-website/search.html',{"message":message,"websites": searched_websites})
+        return render(request, 'all-website/search.html',{"message":message,"awards": searched_awards})
 
     else:
         message = "You haven't searched for any term"
