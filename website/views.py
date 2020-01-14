@@ -20,3 +20,10 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-website/search.html',{"message":message})
+
+def website(request,website_id):
+    try:
+        website = Article.objects.get(id = website_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-website/website.html", {"website":website})
