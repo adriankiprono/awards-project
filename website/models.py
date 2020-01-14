@@ -7,6 +7,11 @@ class Award(models.Model):
     url_link=models.CharField(max_length =100)
     profile =models.ForeignKey("Profile",on_delete=models.CASCADE,default='now')
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        award = cls.objects.filter(title__icontains=search_term)
+        return award
+
     def __str__(self):
         return self.title
 
