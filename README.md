@@ -17,7 +17,7 @@
 
 To view the application go to [click here](https://github.com/adriankiprono/awards-project.git )
 
-- Step 1: Clone this repo :git clone ()
+- Step 1: Clone this repo :git clone (https://adriano-awards.herokuapp.com/)
 
 - step 2: Open the repo using your text editor e.g atom or vscode
 
