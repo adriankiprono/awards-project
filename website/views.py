@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
-
+@login_required(login_url='/accounts/login/')
 def home(request):
     awards = Award.objects.all()
     
@@ -21,7 +23,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any website"
         return render(request, 'all-website/search.html',{"message":message})
-
+@login_required(login_url='/accounts/login/')
 def website(request,website_id):
     try:
         website = Article.objects.get(id = website_id)
