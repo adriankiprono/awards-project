@@ -1,25 +1,27 @@
 {%extends 'all-website/base.html'%}
 {% block content %}
 {{block.super}}
-<div class="container">
+<div class="container-fluid " style="position: absolute;padding-left: 280px; ">
 
     <!-- Looping through news   -->
     {% for award in awards %}
-    
-        <div class="row">
-                <!-- displaying website -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <h2 class="text-center"> {{ award.title }} </h2>
-                </div>
-                <!--Display news Article images  -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <img src="{{award.image.url}}" class="img-responsive" alt="Image">
-                </div>
-            
+    <!-- displaying website -->
+    <div class="card text-white bg-primary mb-3" style="max-width: 50rem; text-align: center;" >
+            <div class="card-body  ">
+              <h5 class="card-title">{{ award.title }}</h5>
+              <p class="card-text">{{award.description}}</p>
+              <a href="{{award.url_link}}" class="btn btn-outline-light">link</a>
+              <p class="card-text"><large class=" ">{{award.profile}}</large></p>
+                
             </div>
+            <!--Display news  images  -->
+            <img class="card-img-bottom" src="{{award.image.url}}" alt="Card image cap">
+          </div>
+    
+        
     
         {% empty %}
-        <div class="row">
+        <div class="jumbotron">
             <h2 class="text-center">There are No WEBSITES</h2>
         </div>
         {% endfor %}
