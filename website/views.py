@@ -31,3 +31,17 @@ def website(request,website_id):
     except DoesNotExist:
         raise Http404()
     return render(request,"all-website/website.html", {"website":website})
+
+def new_website(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewAwardForm(request.POST, request.FILES)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.editor = current_user
+            article.save()
+        return redirect('home')
+
+    else:
+        form = NewAwardForm()
+    return render(request, 'new_website.html', {"form": form})

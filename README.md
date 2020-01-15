@@ -21,9 +21,16 @@ To view the application go to [click here](https://github.com/adriankiprono/awar
 
 - step 2: Open the repo using your text editor e.g atom or vscode
 
-- step 3:Run the the application in  the terminal using python3 manage.py
+- step 3: see Python version 3.8 Installation guide
 
-- step 4:Click the link in the terminal result to view the the website
+- step 4: Django version 3.0 see installation details here[https://docs.djangoproject.com/en/3.0/topics/install/]
+
+- step 5: check the requirement txt file to get the required extension
+
+- step 6:Run the the application in  the terminal using python3 manage.py
+
+- step 7:Click the link in the terminal result to view the the website
+
 
 # Technologies Used
 
