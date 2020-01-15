@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import *
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 
@@ -18,7 +19,7 @@ def search_results(request):
         return render(request, 'all-website/search.html',{"message":message,"awards": searched_awards})
 
     else:
-        message = "You haven't searched for any term"
+        message = "You haven't searched for any website"
         return render(request, 'all-website/search.html',{"message":message})
 
 def website(request,website_id):
